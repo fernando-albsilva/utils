@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="CsvToSqlInsert/CsvToSqlInsert.csproj" />
+  <Project Path="Services/Services.csproj" />
+  <Project Path="Tests/Tests.csproj" />
+</Solution>
