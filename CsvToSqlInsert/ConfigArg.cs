@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using Services.SqlGeneratorService;
+using System.Data;
 
 namespace CsvToSqlInsert
 {
@@ -10,14 +11,15 @@ namespace CsvToSqlInsert
         public string OutputCsvFileName { get; set; } = "output-relatorio.sql";
 
         public string TableName { get; set; } = "PERSON";
-        public Dictionary<string, DbType> Collumns { get; set; } =
+        public Dictionary<string, ColumnDefinition> Collumns { get; set; } =
             new()
             {
-                { "Name", DbType.String },
-                { "Age", DbType.Int16 },
-                { "Birth", DbType.DateTime },
-                { "Graduation", DbType.Date },
-                { "Salary", DbType.Decimal }
+                { "Name", new () { DatabaseType  = DbType.String } },
+                { "Age", new () { DatabaseType  = DbType.Int16 } },
+                { "Birth", new () { DatabaseType  = DbType.DateTime } },
+                { "Graduation", new () { DatabaseType  = DbType.Date } },
+                { "Salary", new () { DatabaseType  = DbType.Decimal } },
+                { "Creation", new () { CustomSqlType  = "DateTimeNow", CustomValue = "CURRENT_TIMESTAMP" } },
             };
 
     }

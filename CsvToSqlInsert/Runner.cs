@@ -1,4 +1,5 @@
 ﻿using Services;
+using Services.SqlGeneratorService;
 
 namespace CsvToSqlInsert
 {
@@ -64,6 +65,15 @@ namespace CsvToSqlInsert
             ConsoleService.WriteLine();
             ConsoleService.WriteLine($"{nameof(ConfigArg.OutputCsvFileName)}: {Configuration.OutputCsvFileName}");
             ConsoleService.WriteLine();
+            foreach (var (name, column) in Configuration.Collumns)
+            {
+                ConsoleService.WriteLine($"Coluna: {name}:");
+                ConsoleService.WriteLine($"  DatabaseType: {column.DatabaseType}");
+                ConsoleService.WriteLine($"  CustomSqlType: {column.CustomSqlType}");
+                ConsoleService.WriteLine($"  CustomValue: {column.CustomValue}");
+                ConsoleService.WriteLine();
+
+            }
         }
 
         private string AskForContinue()
