@@ -3,4 +3,5 @@
     <File Path=".gitignore" />
   </Folder>
   <Project Path="csv-to-sql-insert/csv-to-sql-insert.csproj" />
+  <Project Path="tests/tests.csproj" />
 </Solution>
